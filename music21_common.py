@@ -59,4 +59,5 @@ sample_stream = [["C",2], "D","E"] #C 2 beats, D,E 1beat each
 
 #happybirthday_stream = ["C","C",["D",2],["C",2], ["F",2], ["E",2]]
 happybirthday_stream = [["C",0.5],["C",0.5],["D",1],["C",1], ["F",1], ["E",1]]
-play_stream(happybirthday_stream)
+#play_stream(happybirthday_stream)
+#show_stream(happybirthday_stream)
