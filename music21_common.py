@@ -35,12 +35,10 @@ def gen_stream(list1):
     stream1 = stream.Stream()
     for i in list1:
         if (isinstance(i,list)):
-            if(i[1]==2):
-                duration1 = "half"
-            elif(i[1]==4):
-                duration1 = "whole"
+            d = duration.Duration()
+            d.quarterLength  = i[1]
             note1 =note.Note(i[0])
-            note1.duration.type = duration1
+            note1.duration.type = d.type
             stream1.append(note1)
         else:
             stream1.append(note.Note(i))
@@ -57,7 +55,8 @@ def play_stream(list1):
 
 sample_stream = [["C",2], "D","E"] #C 2 beats, D,E 1beat each
 #show_stream(sample_stream)
-play_stream(sample_stream)
+#play_stream(sample_stream)
 
-happybirthday_stream = ["C","C",["D",2],["C",2], ["F",2], ["E",2]]
+#happybirthday_stream = ["C","C",["D",2],["C",2], ["F",2], ["E",2]]
+happybirthday_stream = [["C",0.5],["C",0.5],["D",1],["C",1], ["F",1], ["E",1]]
 play_stream(happybirthday_stream)
